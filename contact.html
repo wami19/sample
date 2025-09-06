@@ -1,0 +1,83 @@
+<html>
+	<head>
+		<title>CCS 631: Personal Website - CONTACT</title>
+		<link rel="stylesheet" href="styles.css">
+	</head>
+	<body>
+		<!-- HEADER -->
+		<div class="head-foot">
+			<br>
+			<h3 style="text-align: center;">
+				<a href="index.html"> HOME </a> |
+				<a href="portfolio.html"> PORTFOLIO </a> |
+				<a href="contact.html"> CONTACT </a>
+			</h3>
+			<br>
+		</div>
+		<div class="inside-box">
+			<h1>CONTACT INFO</h1>
+			<ul>
+				<li><b>Address:</b> National Road, Brgy. Tolingon, Isabel, Leyte 6539</li>
+				<li><b>Mobile Number:</b> +639666834707</li>
+				<li><b>E-mail Address:</b> will.mancao@gmail.com</li>
+			</ul>
+		</div>
+		<hr>
+		<div class="inside-box">
+			<h1>SEND A MESSAGE</h1>
+			<p style="color:red">(NOTE: The sending of this form is not yet implimented. But, it will display or clear the values below.)</p>
+			<form id="myForm">
+				<label for="fname">First Name:</label><br>
+					<input type="text" id="fname" name="fname"><br>
+				<label for="lname">Last Name:</label><br>
+					<input type="text" id="lname" name="lname"><br>
+				<label for="email">Email:</label><br>
+					<input type="text" id="email" name="email"><br>
+				<label for="message">Message:</label><br>
+					<textarea id="message" name="message" rows="4" cols="50" onclick="clearInitialText(this)">Enter text here.</textarea><br>
+				<button type="button" onclick="clearForm()">Clear</button>
+				<button type="button" onclick="showMessage()">Submit</button>
+			</form>
+		</div>
+		<div class="inside-box">
+			<h1>VISIT</h1>
+			<iframe 
+				src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d979.5590440216!2d124.47647631560295!3d10.869633031002047!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTDCsDUyJzExLjEiTiAxMjTCsDI4JzM3LjIiRQ!5e0!3m2!1sen!2sph!4v1755937112346!5m2!1sen!2sph" 
+				width="600" 
+				height="450" 
+				style="border:0;" 
+				allowfullscreen="" 
+				loading="lazy" 
+				referrerpolicy="no-referrer-when-downgrade">
+			</iframe>
+		</div>
+		<!-- FOOTER -->
+		<div class="head-foot">
+			<br>
+			<p style="text-align: center;">&copy; 2025 William Evan Mancao. All Rights Reserved.</p>
+			<br>
+		</div>
+		
+		<script>
+			function clearInitialText(element) {
+        		if (element.value === 'Enter text here.') {
+					// If it is, clear the text
+					element.value = '';
+				}
+			}
+			function clearForm() {
+				document.getElementById("myForm").reset();
+			}
+			function showMessage() {
+				const fname = document.getElementById('fname').value;
+				const lname = document.getElementById('lname').value;
+				const email = document.getElementById('email').value;
+				const message = document.getElementById('message').value;
+
+				const full_message = `First Name: ${fname}\nLast Name: ${lname}\nEmail: ${email}\nMessage: ${message}`;
+
+				alert(full_message);
+			}
+		</script>
+	</body>
+</html>
